@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.bsblue{
+    color: #66FCF1;
+}
+.bg-bsblue{
+    background-color: #66FCF1;
+}
+.bsdblue{
+    color: #1F2833;
+}
+
+.cye{
+    color: #C5C6C7;
+}
+.mblue{
+    color: #45A29E;
+}
+.da{
+    color: #0B0C10;
+}
+.borderr{
+    border: 2px solid red;
+}
