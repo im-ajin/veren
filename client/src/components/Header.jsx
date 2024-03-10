@@ -1,17 +1,25 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import car1 from '../assets/car1.webp';
+import logo from '../assets/logo.webp';
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
   return (
-    <div className='bg-slate-200'>
-      <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
+    <div className='px-5'>
+      <div className='flex justify-between items-center p-3 '>
         <Link to='/'>
-          <h1 className='font-bold'>Auth App</h1>
+          <div className='flex items-center gap-3 '>
+            <img src={logo} alt="logo" height={35} width={35}/>
+          <h1 className='bsdblue font-bold text-3xl '>VRMS</h1>
+          </div>
         </Link>
         <ul className='flex gap-4'>
           <Link to='/'>
             <li>Home</li>
+          </Link>
+          <Link to='/vehicles'>
+            <li>Vehicles</li>
           </Link>
           <Link to='/about'>
             <li>About</li>
