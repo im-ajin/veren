@@ -16,6 +16,9 @@ body{
 .bg-bsblue{
     background-color: #66FCF1;
 }
+.bg-bsdblue{
+    background-color: #1F2833;
+}
 .bsdblue{
     color: #1F2833;
 }
@@ -32,3 +35,32 @@ body{
 .borderr{
     border: 2px solid red;
 }
+.biganimation{
+    transition: linear 150ms;
+}
+.biganimation:hover{
+    transform: scale(1.1);
+}
+.sign{
+    background: rgb(2,0,36);
+background: linear-gradient(356deg, rgba(2,0,36,1) 0%, rgba(169,20,156,1) 49%, rgba(0,212,255,1) 100%);
+}
+.gbox{
+    background: rgb(2,0,36);
+background: linear-gradient(84deg, rgba(2,0,36,1) 0%, rgba(140,20,169,1) 53%, rgba(0,212,255,1) 100%);
+}
+
+.bouncing-image {
+    position: absolute;
+    animation: bounce 1s infinite alternate; /* Adjust animation duration as needed */
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px); /* Adjust the bounce height as needed */
+    }
+  }
+  

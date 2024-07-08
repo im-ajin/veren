@@ -4,8 +4,12 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import vehicleRoutes from './routes/vehicle.route.js'
+import bookingRoutes from './routes/booking.route.js'
+import adminRoutes from './routes/admin.route.js'
+import messageRoutes from './routes/message.route.js'
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import multer from 'multer';
 dotenv.config();
 
 mongoose
@@ -23,9 +27,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-});
+
 
 app.use(express.json());
 
@@ -35,9 +37,18 @@ app.listen(3000, () => {
   console.log('Server listening on port 3000');
 });
 
+
+
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/vehicle', vehicleRoutes);
+app.use('/api/booking', bookingRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/message', messageRoutes);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
@@ -48,3 +59,4 @@ app.use((err, req, res, next) => {
     statusCode,
   });
 });
+

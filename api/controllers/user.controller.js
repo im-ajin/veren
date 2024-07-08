@@ -8,7 +8,7 @@ export const test = (req, res) => {
   });
 };
 
-// update user
+
 
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.id) {
@@ -39,7 +39,7 @@ export const updateUser = async (req, res, next) => {
 };
 
 
-// delete user
+
 
 
 export const deleteUser = async (req, res, next) => {
@@ -53,4 +53,13 @@ export const deleteUser = async (req, res, next) => {
     next(error);
   }
 
+}
+
+export const getUsers = async(req, res, next) => {
+  try {
+    const data = await User.find({}, { password: 0 });
+      res.status(200).json(data);
+    } catch (error) {
+      res.status(400).json({message : 'error occured'})
+    }
 }

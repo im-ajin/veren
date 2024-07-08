@@ -17,6 +17,7 @@ import {
   deleteUserFailure,
   signOut,
 } from '../redux/user/userSlice';
+import { Button } from 'flowbite-react';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -109,7 +110,7 @@ export default function Profile() {
     }
   };
   return (
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='p-3 max-w-lg mx-auto min-h-screen'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
@@ -144,6 +145,7 @@ export default function Profile() {
             ''
           )}
         </p>
+        {currentUser && currentUser.isAdmin && <p className='text-end pr-1 font-bold text-sm'>Admin</p>}
         <input
           defaultValue={currentUser.username}
           type='text'
@@ -167,9 +169,9 @@ export default function Profile() {
           className='bg-slate-100 rounded-lg p-3'
           onChange={handleChange}
         />
-        <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
+        <Button className='bg-bsdblue cye p-1 rounded-lg uppercase hover:opacity-95 disabled:opacity-80' type='submit'>
           {loading ? 'Loading...' : 'Update'}
-        </button>
+        </Button>
       </form>
       <div className='flex justify-between mt-5'>
         <span

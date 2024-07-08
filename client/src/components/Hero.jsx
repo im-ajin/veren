@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'flowbite-react';
 import car1 from '../assets/car1.webp';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -12,11 +13,13 @@ const Hero = () => {
            <p className='text-xl bsdblue'>
             Streamline your vehicle rental experience with our effortless booking process.
            </p>
+           <Link to={'/vehicles'}>
            <Button className='bg-bsblue bsdblue w-[250px] hover:bg-transparent'>Explore vehicles</Button>
+           </Link>
         </div>
         <div className='flex items-center justify-center'>
            <div className='p-10'>
-           <img src={car1} alt="logo" />
+           <img src={car1} alt="logo" className='biganimation'/>
            </div>
         </div>
       </div>

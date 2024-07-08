@@ -35,6 +35,14 @@ const vehicleSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
+    vehicleRrpm: {
+      type: Number,
+      required: true
+    },
+    vehicleRentStatus:{
+      type: Boolean,
+      default: false
+    },
     vehiclePicture: {
       type: String,
       default:

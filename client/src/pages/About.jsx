@@ -2,23 +2,20 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div className='px-4 py-12 max-w-2xl mx-auto'>
+    <div className='px-4 py-12 max-w-2xl mx-auto min-h-screen'>
       <h1 className='text-3xl font-bold  mb-4 text-slate-800'>About</h1>
       <p className='mb-4 text-slate-700'>
-        This is a MERN (MongoDB, Express, React, Node.js) stack application with
-        authentication. It allows users to sign up, log in, and log out, and
-        provides access to protected routes only for authenticated users.
+      Welcome to VRMS, your premier destination for all your rental needs. At VRMS, we strive to provide exceptional rental services tailored to meet your unique requirements.
       </p>
       <p className='mb-4 text-slate-700'>
-        The front-end of the application is built with React and uses React
-        Router for client-side routing. The back-end is built with Node.js and
-        Express, and uses MongoDB as the database. Authentication is implemented
-        using JSON Web Tokens (JWT).
+      Our mission at VRMS is to offer top-quality rental solutions that exceed our customers' expectations. We aim to make the rental process seamless, convenient, and hassle-free for all our clients.
       </p>
       <p className='mb-4 text-slate-700'>
-        This application is intended as a starting point for building full-stack
-        web applications with authentication using the MERN stack. Feel free to
-        use it as a template for your own projects!
+      Our extensive inventory features a wide range of high-quality products to suit various needs and preferences.
+      </p>
+      <p className='mb-4 text-slate-700'>We maintain our rental items to the highest standards to ensure reliability and performance. Our friendly and knowledgeable staff are dedicated to providing excellent customer service and assisting you every step of the way.</p>
+      <p className='mb-4 text-slate-700'>With easy booking processes and flexible rental options, we make renting as convenient as possible for you. We offer competitive rates and transparent pricing to provide the best value for your money. 
+      We are committed to giving back to the community and actively participate in local initiatives and events.
       </p>
     </div>
   );

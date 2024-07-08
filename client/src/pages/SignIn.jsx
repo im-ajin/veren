@@ -7,6 +7,7 @@ import {
 } from '../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import OAuth from '../components/OAuth';
+import start from '../assets/start.jpg';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -41,7 +42,14 @@ export default function SignIn() {
     }
   };
   return (
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='flex'>
+    
+    <div className='lg:flex-1 flex justify-center items-center'>
+     <img src={start} alt="" height={300} width={300} className='hidden lg:block'/>
+    </div>
+
+    <div className='p-3 min-h-screen flex-1 flex justify-center'>
+      <div className='w-[450px] mt-24 md:w-[500px]'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
@@ -50,6 +58,7 @@ export default function SignIn() {
           id='email'
           className='p-3 bg-slate-100 focus:outline-none rounded-lg'
           onChange={handleChange}
+          required
         />
         <input
           type='password'
@@ -57,6 +66,7 @@ export default function SignIn() {
           id='password'
           className='bg-slate-100 p-3 rounded-lg focus:outline-none'
           onChange={handleChange}
+          required
         />
         <button
           disabled={loading}
@@ -75,6 +85,8 @@ export default function SignIn() {
       <p className='text-red-700 mt-5'>
         {error ? error.message || 'Something went wrong!' : ''}
       </p>
+    </div>
+    </div>
     </div>
   );
 }
