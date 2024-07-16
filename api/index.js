@@ -9,7 +9,7 @@ import adminRoutes from './routes/admin.route.js'
 import messageRoutes from './routes/message.route.js'
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import multer from 'multer';
+
 dotenv.config();
 
 mongoose
@@ -45,6 +45,8 @@ app.use('/api/vehicle', vehicleRoutes);
 app.use('/api/booking', bookingRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/message', messageRoutes);
+
+app.use(express.static(path.join(__dirname, '/client/dist')))
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
