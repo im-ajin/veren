@@ -13,7 +13,13 @@ import path from 'path';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect(process.env.MONGO,{
+    useNewUrlParser: true,
+useUnifiedTopology: true,
+serverSelectionTimeoutMS: 5000,  
+socketTimeoutMS: 45000,
+connectTimeoutMS: 10000 
+  })
   .then(() => {
     console.log('Connected to MongoDB');
   })
